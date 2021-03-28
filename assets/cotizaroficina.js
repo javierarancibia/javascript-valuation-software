@@ -1,4 +1,4 @@
-function cotizarTerreno() {
+function cotizarOficina() {
     
 
     // Scroll al div del formulario
@@ -13,9 +13,9 @@ function cotizarTerreno() {
     // Inhabilita los otros botones
     let botonTerreno = document.getElementById("boton1")
     botonTerreno.disabled = true
-    botonTerreno = document.getElementById("boton3")
+    botonTerreno = document.getElementById("boton2")
     botonTerreno.disabled = true
-    botonTerreno = document.getElementById("boton4")
+    botonTerreno = document.getElementById("boton3")
     botonTerreno.disabled = true
     
         
@@ -63,26 +63,43 @@ function cotizarTerreno() {
     $("#ciudadPropiedad").append(select);
    
 
-
-    // Input Superficie de Terreno
+    // Input Superficie de Casa
     element = document.createElement("div")
-    element.setAttribute("id", "superficieTerreno")
+    element.setAttribute("id", "superficieCasa")
     element.setAttribute("style", "padding-right: 0px; padding-left: 0px; font-family: 'Lato', sans-serif;")
     document.getElementById("formularioCasa").appendChild(element)
 
     select = $("<select></select>");
-    let supTerreno = ["Selecciona superficie de terreno estimada", "5 m² - 500 m²", "501 m² - 1.000 m²", "1.001 m² - 5.000 m²", "5.001 m² - 10.000 m²", "10.001 m² - 20.000 m²"]
+    let supCasa = ["Selecciona superficie construida estimada", "5 m² - 50 m²", "51 m² - 100 m²", "101 m² - 150 m²", "151 m² - 200 m²", "201 m² - 250 m²", "251 m² - 300 m²", "301 m² - 350 m²"]
 
-    for(let i=0; i < supTerreno.length; i++){
+    for(let i=0; i < supCasa.length; i++){
     let option = $("<option></option>");
     select.addClass("container ml-5 mb-5 form-control form-control-lg")
-    select.attr("id", "landVal")
-    $(option).html(supTerreno[i]);
+    select.attr("id", "interiorVal")
+    $(option).html(supCasa[i]);
     $(select).append(option);
     }
 
-    $("#superficieTerreno").append(select);
+    $("#superficieCasa").append(select);
 
+
+    element = document.createElement("div")
+    element.setAttribute("id", "numHabitaciones")
+    element.setAttribute("style", "padding-right: 0px; padding-left: 0px; font-family: 'Lato', sans-serif;")
+    document.getElementById("formularioCasa").appendChild(element)
+
+    select = $("<select></select>");
+    let numHabitaciones = ["Selecciona un numero de oficinas privadas (si existen)", "1", "2", "3", "4", "5 o mas"]
+
+    for(let i=0; i < numHabitaciones.length; i++){
+    let option = $("<option></option>");
+    select.addClass("container ml-5 mb-5 form-control form-control-lg")
+    select.attr("id", "habitacionesVal")
+    $(option).html(numHabitaciones[i]);
+    $(select).append(option);
+    }
+
+    $("#numHabitaciones").append(select);
 
     
     // Boton
@@ -106,7 +123,8 @@ function cotizarTerreno() {
     function getData() {
         let direccionPropiedad = document.getElementById("direccionPropiedad").value;
         let ciudadPropiedad = document.getElementById("cityVal").value;
-        let superficieTerreno = document.getElementById("landVal").value
+        let superficieCasa = document.getElementById("interiorVal").value;
+        let numeroHabitaciones = document.getElementById("habitacionesVal").value;
 
         if (direccionPropiedad == "" || direccionPropiedad == null){
             swal("Error!", "Debes ingresar una direccion valida", "error");
@@ -116,8 +134,12 @@ function cotizarTerreno() {
             swal("Error!", "Debes ingresar una ciudad", "error");
             return false
         }
-        if (superficieTerreno == "Selecciona superficie de terreno estimada"){
-            swal("Error!", "Debes ingresar una superficie de terreno", "error");
+        if (superficieCasa == "Selecciona superficie construida estimada"){
+            swal("Error!", "Debes ingresar una superficie de casa valido", "error");
+            return false
+        }
+        if (numeroHabitaciones == "Selecciona un numero de oficinas privadas (si existen)"){
+            swal("Error!", "Debes ingresar un numero de oficinas", "error");
             return false
         }
                
@@ -126,27 +148,30 @@ function cotizarTerreno() {
         let botonForm = document.getElementById("botonFormulario")
         botonForm.disabled = true
 
-        function Propiedad(terreno, direccion, ciudad, ){
-            this.terreno = terreno
+        function Propiedad(casa, direccion, ciudad, habitaciones){
+            this.casa = casa
             this.direccion = direccion
             this.ciudad = ciudad
+            this.habitaciones = habitaciones
         }
 
         let priceimg = document.getElementById("priceimg");
-        priceimg.setAttribute("src", "assets/img/land2.png")
+        priceimg.setAttribute("src", "assets/img/office2.png")
         
-        let propiedad = new Propiedad(superficieTerreno, direccionPropiedad, ciudadPropiedad)
+        let propiedad = new Propiedad(superficieCasa, direccionPropiedad, ciudadPropiedad, numeroHabitaciones)
         $('.cartaPrecios').fadeIn(3500)
        
-                
+        
+
+        
         if (propiedad.ciudad === 'Valparaiso' || propiedad.ciudad === 'Viña del Mar' || propiedad.ciudad === 'Quilpué'){
-            let precio = document.createTextNode('Precio Final: $88.000');
+            let precio = document.createTextNode('Precio Final: $105.000');
             let nodoPrecio = document.getElementById('precioCotizacion');
             nodoPrecio.appendChild(precio)
 
 
         } else{
-            let precio = document.createTextNode('Precio Final: $95.000');
+            let precio = document.createTextNode('Precio Final: $125.000');
             let nodoPrecio = document.getElementById('precioCotizacion');
             nodoPrecio.appendChild(precio)
             

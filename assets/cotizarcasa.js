@@ -14,6 +14,10 @@ function cotizarCasa() {
     // Inhabilita los otros botones
     let botonTerreno = document.getElementById("boton2")
     botonTerreno.disabled = true
+    botonTerreno = document.getElementById("boton3")
+    botonTerreno.disabled = true
+    botonTerreno = document.getElementById("boton4")
+    botonTerreno.disabled = true
     
         
     // Generacion del titulo
@@ -190,6 +194,9 @@ function cotizarCasa() {
             this.ciudad = ciudad
             this.habitaciones = habitaciones
         }
+
+        let priceimg = document.getElementById("priceimg");
+        priceimg.setAttribute("src", "assets/img/house2.png")
         
         let propiedad = new Propiedad(superficieTerreno, superficieCasa, direccionPropiedad, ciudadPropiedad, numeroHabitaciones)
         $('.cartaPrecios').fadeIn(3500)

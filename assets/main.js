@@ -10,7 +10,11 @@ document.getElementById("boton1").addEventListener("click", cotizarCasa, {once:t
 // Boton cotizar informe terreno
 document.getElementById("boton2").addEventListener("click", cotizarTerreno, {once:true})
 
+// Boton cotizar informe Depto
+document.getElementById("boton3").addEventListener("click", cotizarDepto, {once:true})
 
+// Boton cotizar informe oficina
+document.getElementById("boton4").addEventListener("click", cotizarOficina, {once:true})
 
 // Ajax de la UF
 let valorUf = 0
