@@ -3,7 +3,7 @@
 function cotizarTerreno() {
     // Generacion del titulo
     let element = document.createElement("h3")
-    element.setAttribute("class", "my-4")
+    element.setAttribute("class", "my-4 text-white")
     let textNode = document.createTextNode("Caracteristicas de la propiedad")
 
     element.appendChild(textNode)
@@ -50,7 +50,7 @@ function cotizarTerreno() {
 
     botonFormulario.appendChild(textButton)
     botonFormulario.setAttribute("type", "button");
-    botonFormulario.setAttribute("class", "btn btn-primary btn-lg btn-block");
+    botonFormulario.setAttribute("class", "btn btn-outline-light btn-lg btn-block px-5 py-1 text-center");
     botonFormulario.setAttribute("id", "botonFormulario");
     document.getElementById("formularioCasa").appendChild(botonFormulario)
 

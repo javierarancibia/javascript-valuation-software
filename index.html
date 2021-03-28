@@ -5,59 +5,215 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <title>Valuador de Propiedades</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Lekton:wght@400;700&display=swap" rel="stylesheet">
+|   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <title>.val Tasaciones</title>
 </head>
 <body>
-    <div class="hero-image">
-      <div class="hero-text">
-        <h1>Tasador de propiedades</h1>
-        <p>Ingresa los datos de la propiedad para obtener el valor del informe de tasacion</p>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav mx-auto">
+        <!-- <p id="ufInfo" class="nav-item nav-link active px-4 h5"></p> -->
+        <a class="nav-item nav-link active px-4 h5 pt-0 mt-0" href="#">Inicio<span class="sr-only"></span></a>
+        <a class="nav-item nav-link active px-4 h5 pt-0 mt-0" href="#">Nosotros</a>
+        <a class="nav-item nav-link active px-4 h5 pt-0 mt-0" href="#">¿Para que tasar?</a>
+        <a class="nav-item nav-link active px-4 h5 pt-0 mt-0" href="#">Nuestro Trabajo</a>
+        <a class="nav-item nav-link active px-4 h5 pt-0 mt-0" href="#">Contacto</a><br><br>
+      </div>
+    </div>
+  </nav>
+
+  <div class="hero-image">
+    <div class="hero-text">
+    </div>
+  </div>
+
+
+
+
+  <!-- Cartas de propiedades -->
+  <div class="wrapper">
+    <h1 class="mt-4">Cotice la tasacion de su propiedad con nosotros</h1>
+    <div class="cols my-5">
+        <div class="col" ontouchstart="this.classList.toggle('hover');">
+          <div class="container">
+            <div class="front" style="background-image: url('assets/img/house.jpg')">
+              <div class="inner">
+                <p>Casa</p>
+                <span>Valorice su casa</span>
+              </div>
+            </div>
+            <div class="back">
+              <div class="inner">
+                <p>Realizamos una visita tecnica a su propiedad para entregarle un valor comercial real y documentado.</p>
+                <button type="button" class="btn btn-outline-light" id="boton1">Cotizar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col" ontouchstart="this.classList.toggle('hover');">
+          <div class="container">
+            <div class="front" style="background-image: url('assets/img/land.jpg')">
+              <div class="inner">
+                <p>Terreno</p>
+                <span>Valorice su sitio</span>
+              </div>
+            </div>
+            <div class="back">
+              <div class="inner">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.</p>
+                <button type="button" class="btn btn-outline-light" id="boton2">Cotizar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col" ontouchstart="this.classList.toggle('hover');">
+          <div class="container">
+            <div class="front" style="background-image: url('assets/img/apartment.jpg')">
+              <div class="inner">
+                <p>Departamento</p>
+                <span>Valorice su departamento</span>
+              </div>
+            </div>
+            <div class="back">
+              <div class="inner">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col" ontouchstart="this.classList.toggle('hover');">
+          <div class="container">
+            <div class="front" style="background-image: url('assets/img/office.jpg')">
+              <div class="inner">
+                <p>Oficina</p>
+                <span>Valorice su oficina</span>
+              </div>
+            </div>
+            <div class="back">
+              <div class="inner">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+  </div>
+
+  
+
+  <div id="formularioCasa" class="row container"></div>
+
+
+
+    <!-- // Carta de precios -->
+
+    <div class="cartaPrecios container bg-white mb-5" id="cartaPrecios" style="display: none;">
+      <div class="cartaPrecios2 row d-flex justify-content-center">
+          <div class="col-sm-5 col-md-5 ml-1">
+              <div class="py-4 d-flex flex-row">
+                  <h3><span class="fa fa-check-square-o"></span><b>COSTO DEL SERVICIO DE TASACION</b>  </h3><span class="pl-2"> </span>
+              </div>
+              <h4 class="green" id="precioCotizacion"></h4>
+              <div class="d-flex pt-2">
+                <div>
+                  <p><b>Cupon de descuento </b><span class="green"> Aplica 10% de descuento </span></p>
+                </div>
+                <div class="ml-5">
+                  <p class="text-primary ml-5"><i class="fas fa-check text-primary"></i> Descuento aplicado</p>
+                </div>
+              </div>
+              <p>Por elegirnos le regalamos un 10% de descuento en la compra del servicio de tasacion de su propiedad. </p>
+                 <div class="pt-2">
+                  <h4>Condiciones del servicio</h4>
+                  <p> Posterior al pago, uno de nuestros tasadores se comunicara con usted para coordinar fecha y horario de visita de la propiedad</p>
+                  <button type="button" id="contactbutton"class="botonContacto btn btn-primary btn-block rounded-pill" style="font-weight: bold; margin-top: 20px; padding-left: 200px; padding-right: 200px; background-color: #7192c4;">Contactanos</button>
+                </div>
+          </div>
+          <div class="col-sm-3 col-md-4 offset-md-1 mobile">
+              <div class="py-4 d-flex justify-content-end">
+                  <h6><a href="." style="font-weight: bold; color: #7192c4">Cancelar y volver a cotizar</a></h6>
+              </div>
+              
+              <div class="p-2 d-flex pt-3">
+                  <img src="assets/img/house2.png" width="100%" height="50%">
+              </div>
+          </div>
+             
       </div>
     </div>
 
+    <div class="typeform-widget" data-url="https://form.typeform.com/to/UVJum6UQ?typeform-medium=embed-snippet" id="typeForm" style="display: none; width: 100%; height: 500px; margin-top:200px; margin-bottom:100px"></div>
 
-    <div class="card-group container my-5">
-      <div class="card mx-3">
-        <img class="card-img-top" src="assets/img/house.jpg" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Casa</h5>
-          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          <button type="button" class="btn btn-outline-primary" id="boton1">Cotizar</button>
+    <!-- Footer   -->
+    <footer class="container-fluid bg-grey py-5">
+      <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+              <div class="row">
+                  <div class="col-md-6 ">
+                    <div class="logo-part">
+                      <i class="fas fa-city fa-5x mb-3"></i>
+                        <p>7 Oriente 304, Viña del Mar, Chile</p>
+                        <p>Le entregamos un valor comercial real de su propiedad, bajo metodologias documentadas, sujetas a las Normas Internacionales de Valuación (IVSC). Tras una evaluación técnica y profesional de su propiedad, usted puede tomar la mejor decision para el destino de su bien raiz.</p>
+                    </div>
+                  </div>
+                  <div class="col-md-6 px-4">
+                    <h6> Tasadores Inmobiliarios</h6>
+                    <p>But horizontal lines can only be a full pixel high.</p>
+                    <a href="#" class="btn-footer"> Mas Informacion </a><br>
+                    <a href="#" class="btn-footer"> Contactanos</a>
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="row">
+                  <div class="col-md-6 px-4">
+                    <h6> Help us</h6>
+                    <div class="row ">
+                        <div class="col-md-6">
+                          <ul>
+                              <li> <a href="."> Home</a> </li>
+                              <li> <a href="#"> Nosotros</a> </li>
+                              <li> <a href="#"> ¿Para que tasar?</a> </li>
+                              <li> <a href="#"> Nuestro Trabajo</a> </li>
+                              <li> <a href="#"> Contacto</a> </li>
+                          </ul>
+                        </div>
+                        <div class="col-md-6 px-4">
+                          <ul>
+                              <li> <a href="#"> Cab Faciliy</a> </li>
+                              <li> <a href="#"> Fax</a> </li>
+                              <li> <a href="#"> Terms</a> </li>
+                              <li> <a href="#"> Policy</a> </li>
+                              <li> <a href="#"> Refunds</a> </li>
+                              <li> <a href="#"> Paypal</a> </li>
+                          </ul>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 ">
+                      <p>That's technology limitation of LCD monitors</p>
+                  </div>
+              </div>
+            </div>
         </div>
       </div>
-      <div class="card mx-3">
-        <img class="card-img-top" src="assets/img/land.jpg" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Terreno</h5>
-          <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-          <button type="button" class="btn btn-outline-primary" id="boton2">Cotizar</button>
-        </div>
       </div>
-      <div class="card mx-3">
-        <img class="card-img-top" src="assets/img/apartment.jpg" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Departamento</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-          <button type="button" class="btn btn-outline-primary">Cotizar</button>
-        </div>
-      </div>
-      <div class="card mx-3">
-        <img class="card-img-top" src="assets/img/office.jpg" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Oficina</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-          <button type="button" class="btn btn-outline-primary">Cotizar</button>
-        </div>
-      </div>
-    </div>
-   <div id="formularioCasa" class="container mb-5 my-5 py-5"></div>
+    </footer>
+  
 
-
-    
-   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
-   <script src="assets/cotizarcasa.js"></script>
-   <script src="assets/cotizarterreno.js"></script>
-   <script src="assets/main.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="http://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+    <script src="assets/cotizarcasa.js"></script>
+    <script src="assets/cotizarterreno.js"></script>
+    <script src="assets/main.js"></script>
+    <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm", b="https://embed.typeform.com/"; if(!gi.call(d,id)) { js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script>
   </body>
 </html>
