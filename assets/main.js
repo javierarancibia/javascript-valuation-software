@@ -16,27 +16,52 @@ document.getElementById("boton3").addEventListener("click", cotizarDepto, {once:
 // Boton cotizar informe oficina
 document.getElementById("boton4").addEventListener("click", cotizarOficina, {once:true})
 
+
+let el3 = document.getElementById("ptasar");
+el3.addEventListener("click", tasar);
+
+function tasar() {
+    $('html, body').animate({
+        scrollTop: $('#tasar').offset().top
+    }, 10);
+
+}
+
+
+let el2 = document.getElementById("cotizador");
+el2.addEventListener("click", cotizacion);
+
+function cotizacion() {
+    $('html, body').animate({
+        scrollTop: $('#cotizacion').offset().top
+    }, 10);
+    
+}
+
+
+let el = document.getElementById("contacto");
+el.addEventListener("click", contacto);
+
+function contacto() {
+    $('html, body').animate({
+        scrollTop: $('#form').offset().top
+    }, 10);
+
+}
+
+
+
 // Ajax de la UF
 let valorUf = 0
 $(document).ready(function() {
     $.ajax({
         url: 'https://mindicador.cl/api', 
         type: 'GET',
-        dataTyoe: 'json'
+        dataType: 'json'
     })
     .done(function(data) {
         $('#ufInfo').append('El valor de la UF de hoy es $' + data.uf.valor)
-        valorUf = data.uf.valor
-        $('#btn').one('click', function() {
-            let valorEnt = $('#ufQuestion').val()
-            let resultado = valorEnt * valorUf
-            resultado = resultado.toFixed(1)
-            let resultadoFinal = document.createTextNode(resultado);
-            let valorSalida = document.getElementById('ufAnswer')
-            valorSalida.appendChild(resultadoFinal);
-        })
-
-        
+             
     })
     .fail(function(xhr, status, error) {
         console.log(error)

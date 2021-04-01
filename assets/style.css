@@ -1,12 +1,33 @@
 body, html {
-    height: 100%;
+    height: 90%;
     background-color: #7192c4;
 }
 
+.encabezado {
+  background-color: white;
+  padding-left: 25rem;
+  padding-right: 25rem;
+  padding-bottom: 7rem;
+  font-family: 'Lato', sans-serif;
+}
 
-  .hero-image {
+.esquema {
+  background-color: white;
+  padding-left: 15rem;
+  padding-right: 15rem;
+  padding-bottom: 7rem;
+  font-family: 'Lato', sans-serif;
+  
+}
+
+.fas {
+  color:rgb(81, 159, 218)
+}
+
+
+.hero-image {
   background-image: url("img/cover.png");
-  height: 47%;
+  height: 80%;
 
   background-position: center;
   background-repeat: no-repeat;
@@ -247,8 +268,8 @@ h1{
   height: 100%;
   font-family: 'Lato', sans-serif;
   padding-bottom: 50px;
-  padding-top: 15px;
   margin-bottom: 200px;
+  display: none; 
 }
 
 .typeform-widget {
@@ -337,5 +358,13 @@ color: #f5f5f5 !important;
 .logo-part {
 border-right: 1px solid grey;
 height: 100%;
+}
+
+
+.form {
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+  margin-top: 10rem;
+  margin-bottom: 5rem;
 }
 
