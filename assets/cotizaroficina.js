@@ -180,9 +180,9 @@ function cotizarOficina() {
         document.getElementById("contactbutton").addEventListener("click", getContact)
 
         function getContact(){
-            $('#typeForm').fadeIn(4000)
+            $('#contactbutton').fadeIn(4000)
             $('html, body').animate({
-                scrollTop: $('#typeForm').offset().top
+                scrollTop: $('#form').offset().top
             }, 10);
 
         }
@@ -194,7 +194,7 @@ function cotizarOficina() {
         }, 10);
 
         //Margenes a div con JQuery
-        // $("#cartaPrecios").css("margin-top", "450px")
+        $("#cartaPrecios").css("margin-top", "400px")
         $("#cartaPrecios").css("margin-bottom", "600px")
 
 

@@ -4,6 +4,22 @@ window.onbeforeunload = function () {
 };
 
 
+let arrow = document.getElementById("arrow");
+arrow.addEventListener("click", subir)
+
+let arrow2 = document.getElementById("arrow2");
+arrow2.addEventListener("click", subir)
+
+let arrow3 = document.getElementById("arrow3");
+arrow3.addEventListener("click", subir)
+
+
+function subir() {
+    window.scrollTo(0,0);
+}
+
+
+
 // Boton cotizar informe casa
 document.getElementById("boton1").addEventListener("click", cotizarCasa, {once:true})
 
