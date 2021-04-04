@@ -161,7 +161,13 @@ function cotizarOficina() {
         let propiedad = new Propiedad(superficieCasa, direccionPropiedad, ciudadPropiedad, numeroHabitaciones)
         $('.cartaPrecios').fadeIn(3500)
        
-        
+        let mapa = document.createElement("iframe")
+        mapa.setAttribute("width", "1100")
+        mapa.setAttribute("height", "450")
+        mapa.setAttribute("frameborder", "0")
+        mapa.setAttribute("style", "border: 0; padding-top: 50px;")
+        mapa.setAttribute("src", "https://www.google.com/maps/embed/v1/place?key=AIzaSyCX9VNRtLubMN2d0Ku3DBqBB_42U9g5oDk&q=" + direccionPropiedad + "," + ciudadPropiedad)
+        document.getElementById("mapa").appendChild(mapa)
 
         
         if (propiedad.ciudad === 'Valparaiso' || propiedad.ciudad === 'Viña del Mar' || propiedad.ciudad === 'Quilpué'){
@@ -194,7 +200,7 @@ function cotizarOficina() {
         }, 10);
 
         //Margenes a div con JQuery
-        $("#cartaPrecios").css("margin-top", "400px")
+        $("#cartaPrecios").css("margin-top", "13rem")
         $("#cartaPrecios").css("margin-bottom", "600px")
 
 

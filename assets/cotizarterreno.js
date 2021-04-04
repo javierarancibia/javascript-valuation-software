@@ -138,6 +138,14 @@ function cotizarTerreno() {
         let propiedad = new Propiedad(superficieTerreno, direccionPropiedad, ciudadPropiedad)
         $('.cartaPrecios').fadeIn(3500)
        
+        let mapa = document.createElement("iframe")
+        mapa.setAttribute("width", "1100")
+        mapa.setAttribute("height", "450")
+        mapa.setAttribute("frameborder", "0")
+        mapa.setAttribute("style", "border: 0; padding-top: 1rem;")
+        mapa.setAttribute("src", "https://www.google.com/maps/embed/v1/place?key=AIzaSyCX9VNRtLubMN2d0Ku3DBqBB_42U9g5oDk&q=" + direccionPropiedad + "," + ciudadPropiedad)
+        document.getElementById("mapa").appendChild(mapa)
+
                 
         if (propiedad.ciudad === 'Valparaiso' || propiedad.ciudad === 'Viña del Mar' || propiedad.ciudad === 'Quilpué'){
             let precio = document.createTextNode('Precio Final: $88.000');
@@ -169,7 +177,7 @@ function cotizarTerreno() {
         }, 10);
 
         //Margenes a div con JQuery
-        $("#cartaPrecios").css("margin-top", "450px")
+        $("#cartaPrecios").css("margin-top", "13rem")
         $("#cartaPrecios").css("margin-bottom", "600px")
 
 
