@@ -281,6 +281,7 @@ h1{
 }
 footer {
       color: rgb(255, 254, 254);
+      font-family: 'Lato', sans-serif;
 }
 footer p, a {
 font-size: 12px;
