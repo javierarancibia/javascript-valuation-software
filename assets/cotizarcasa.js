@@ -135,7 +135,6 @@ function cotizarCasa() {
     botonFormulario.setAttribute("style", "font-family: 'Lato', sans-serif; font-weight: bold");
     botonFormulario.setAttribute("id", "botonFormulario");
     document.getElementById("formularioCasa").appendChild(botonFormulario)
-
     document.getElementById("botonFormulario").addEventListener("click", getData)
     
 
