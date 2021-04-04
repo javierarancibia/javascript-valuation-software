@@ -53,6 +53,10 @@ h1{
   margin: 2rem 0;
 }
 
+.div_phone {
+  background-color: #7192c4;
+}
+
 .wrapper{
   width: 90%;
   margin: 0 auto;
