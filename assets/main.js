@@ -21,16 +21,17 @@ function subir() {
 
 
 // Boton cotizar informe casa
-document.getElementById("boton1").addEventListener("click", cotizarCasa, {once:true})
+// document.getElementById("boton1").addEventListener("click", cotizarCasa, {once:true})    -- {once:true} es para ejecutar funcion solo una vez
+document.getElementById("boton1").addEventListener("click", cotizarCasa)
 
 // Boton cotizar informe terreno
-document.getElementById("boton2").addEventListener("click", cotizarTerreno, {once:true})
+document.getElementById("boton2").addEventListener("click", cotizarTerreno)
 
 // Boton cotizar informe Depto
-document.getElementById("boton3").addEventListener("click", cotizarDepto, {once:true})
+document.getElementById("boton3").addEventListener("click", cotizarDepto)
 
 // Boton cotizar informe oficina
-document.getElementById("boton4").addEventListener("click", cotizarOficina, {once:true})
+document.getElementById("boton4").addEventListener("click", cotizarOficina)
 
 
 let el3 = document.getElementById("ptasar");

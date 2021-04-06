@@ -1,5 +1,7 @@
 function cotizarTerreno() {
     
+    // Vacia div del formulario
+    $('#formularioCasa').empty();
 
     // Scroll al div del formulario
     $('html, body').animate({
@@ -11,12 +13,12 @@ function cotizarTerreno() {
     $("#formularioCasa").css("padding-bottom", "100px")
 
     // Inhabilita los otros botones
-    let botonTerreno = document.getElementById("boton1")
-    botonTerreno.disabled = true
-    botonTerreno = document.getElementById("boton3")
-    botonTerreno.disabled = true
-    botonTerreno = document.getElementById("boton4")
-    botonTerreno.disabled = true
+    // let botonTerreno = document.getElementById("boton1")
+    // botonTerreno.disabled = true
+    // botonTerreno = document.getElementById("boton3")
+    // botonTerreno.disabled = true
+    // botonTerreno = document.getElementById("boton4")
+    // botonTerreno.disabled = true
     
         
     // Generacion del titulo
