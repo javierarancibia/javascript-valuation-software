@@ -38,6 +38,7 @@ let el3 = document.getElementById("ptasar");
 el3.addEventListener("click", tasar);
 
 function tasar() {
+    closeNav()
     $('html, body').animate({
         scrollTop: $('#tasar').offset().top
     }, 10);
@@ -49,6 +50,7 @@ let el2 = document.getElementById("cotizador");
 el2.addEventListener("click", cotizacion);
 
 function cotizacion() {
+    closeNav()
     $('html, body').animate({
         scrollTop: $('#cotizacion').offset().top
     }, 10);
@@ -60,6 +62,7 @@ let el = document.getElementById("contacto");
 el.addEventListener("click", contacto);
 
 function contacto() {
+    closeNav()
     $('html, body').animate({
         scrollTop: $('#form').offset().top
     }, 10);
@@ -91,6 +94,14 @@ $('#btn2').click(function() {
     $('body').load('/');
 })
 
+
+function openNav() {
+    document.getElementById("myNav").style.width = "100%";
+}
+
+function closeNav() {
+document.getElementById("myNav").style.width = "0%";
+}
 
 
 

@@ -24,6 +24,24 @@
   </nav>
 
 
+  <div id="myNav" class="overlay d-block d-sm-none">
+
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+    <div class="overlay-content">
+      <a class="nav-item nav-link active px-4 h5 pt-0 mt-0 fw-bold" href="#">Inicio</a>
+      <a class="nav-item nav-link active px-4 h5 pt-0 mt-0 fw-bold" onclick="tasar()">¿Para que tasar?</a>
+      <a class="nav-item nav-link px-4 active h5 pt-0 mt-0 fw-bold" onclick="cotizacion()">Cotice su tasacion</a>
+        <a class="nav-item nav-link px-4 active h5 pt-0 mt-0 fw-bold" onclick="contacto()">Contacto</a>
+    </div>
+
+  </div>
+  <span onclick="openNav()"><i class="fas fa-bars fa-2x d-block d-sm-none"></i></span>
+
+
+  
+
+
   <div id="carouselExampleControls" class="carousel slide d-none d-xl-block" data-bs-ride="carousel">
     <div class="carousel-inner" style=" width:100%; height: 700px !important;">
       <div class="carousel-item active">
@@ -83,10 +101,10 @@
 
 
   <!-- Cartas de propiedades -->
-  <div class="wrapper mt-5 pt-2 text-center" id="cotizacion">
+  <div class="wrapper mt-5 pt-2 text-center" id="cotizacion" style="margin-bottom: 10rem;">
     <a><i class="fas fa-chevron-up fa-3x mb-3 text-white text-center" id="arrow2"></i></a>
     <h1 class="mt-5 text-white">Cotice la tasacion de su propiedad con nosotros</h1>
-    <div class="cols my-5">
+    <div class="cols mt-5">
         <div class="col-12 col-md-3 mb-5" ontouchstart="this.classList.toggle('hover');">
           <div class="container">
             <div class="front" style="background-image: url('assets/img/house.jpg')">
@@ -158,8 +176,8 @@
   
 
   <div id="formularioCasa" class="row container"></div>
-  <div class="align-content-center"><img src="assets/img/map.png" alt="Casa Tasaciones" width="100%" height="100%"></div>
-  <hr class="text-white" style="height:3px; margin-top:10rem">
+  <!-- <div class="align-content-center"><img src="assets/img/map.png" alt="Casa Tasaciones" width="100%" height="100%"></div> -->
+  <hr class="text-white" style="height:3px; margin-top:21rem">
 
     <!-- // Carta de precios -->
 
@@ -202,7 +220,7 @@
     <!-- Formulario de contacto -->
     <!-- <div class="typeform-widget" data-url="https://form.typeform.com/to/UVJum6UQ?typeform-medium=embed-snippet" id="typeForm" style="display: none; width: 100%; height: 500px; margin-top:200px; margin-bottom:100px"></div> -->
 
-  <div class="form row" id="form" style="margin-top: 5rem;">
+  <div class="form row" id="form" style="margin-top: 15rem;">
     <div class="col-6 d-none d-sm-block"><img src="assets/img/escribenos.png" alt="Escribenos" width="90%" height="auto"></div>
     <form action="https://formspree.io/f/myylygqw" method="POST" class="col-12 col-md-6 mx-auto container">
       <a><i class="fas fa-chevron-up fa-3x mb-3 text-white" id="arrow3"></i></a> 
