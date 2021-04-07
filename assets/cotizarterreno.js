@@ -25,7 +25,7 @@ function cotizarTerreno() {
     let element = document.createElement("h3")
     element.setAttribute("class", "my-4 text-white")
     element.setAttribute("style", "font-family: 'Lato', sans-serif; font-weight: bold")
-    let textNode = document.createTextNode("Caracteristicas de la propiedad")
+    let textNode = document.createTextNode("Caracteristicas del terreno")
 
     element.appendChild(textNode)
     document.getElementById("formularioCasa").appendChild(element)
@@ -140,6 +140,8 @@ function cotizarTerreno() {
         let propiedad = new Propiedad(superficieTerreno, direccionPropiedad, ciudadPropiedad)
         $('.cartaPrecios').fadeIn(3500)
        
+        // Vacia div del mapa
+        $('#mapa').empty();
         let mapa = document.createElement("iframe")
         mapa.setAttribute("width", "1100")
         mapa.setAttribute("height", "450")
@@ -148,7 +150,8 @@ function cotizarTerreno() {
         mapa.setAttribute("src", "https://www.google.com/maps/embed/v1/place?key=AIzaSyCX9VNRtLubMN2d0Ku3DBqBB_42U9g5oDk&q=" + direccionPropiedad + "," + ciudadPropiedad)
         document.getElementById("mapa").appendChild(mapa)
 
-                
+        // Vacia div del precio
+        $('#precioCotizacion').empty();        
         if (propiedad.ciudad === 'Valparaiso' || propiedad.ciudad === 'Viña del Mar' || propiedad.ciudad === 'Quilpué'){
             let precio = document.createTextNode('Precio Final: $88.000');
             let nodoPrecio = document.getElementById('precioCotizacion');

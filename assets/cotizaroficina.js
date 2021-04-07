@@ -25,7 +25,7 @@ function cotizarOficina() {
     let element = document.createElement("h3")
     element.setAttribute("class", "my-4 text-white")
     element.setAttribute("style", "font-family: 'Lato', sans-serif; font-weight: bold")
-    let textNode = document.createTextNode("Caracteristicas de la propiedad")
+    let textNode = document.createTextNode("Caracteristicas de la oficina")
 
     element.appendChild(textNode)
     document.getElementById("formularioCasa").appendChild(element)
@@ -163,6 +163,8 @@ function cotizarOficina() {
         let propiedad = new Propiedad(superficieCasa, direccionPropiedad, ciudadPropiedad, numeroHabitaciones)
         $('.cartaPrecios').fadeIn(3500)
        
+        // Vacia div del mapa
+        $('#mapa').empty();
         let mapa = document.createElement("iframe")
         mapa.setAttribute("width", "1100")
         mapa.setAttribute("height", "450")
@@ -171,7 +173,8 @@ function cotizarOficina() {
         mapa.setAttribute("src", "https://www.google.com/maps/embed/v1/place?key=AIzaSyCX9VNRtLubMN2d0Ku3DBqBB_42U9g5oDk&q=" + direccionPropiedad + "," + ciudadPropiedad)
         document.getElementById("mapa").appendChild(mapa)
 
-        
+        // Vacia div del precio
+        $('#precioCotizacion').empty();
         if (propiedad.ciudad === 'Valparaiso' || propiedad.ciudad === 'Viña del Mar' || propiedad.ciudad === 'Quilpué'){
             let precio = document.createTextNode('Precio Final: $105.000');
             let nodoPrecio = document.getElementById('precioCotizacion');
