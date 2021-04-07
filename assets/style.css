@@ -34,6 +34,7 @@ body, html {
 
 .navbar {
   font-family: 'Lato', sans-serif;
+  cursor: pointer;
 }
 
 
@@ -363,6 +364,7 @@ height: 100%;
 }
 
 
+/* Responsive navbar */
 
 .overlay {
   height: 100%;
@@ -384,6 +386,7 @@ height: 100%;
   width: 100%; /* 100% width */
   text-align: center; /* Centered text/links */
   margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+  cursor: pointer;
 }
 
 /* The navigation links inside the overlay */
