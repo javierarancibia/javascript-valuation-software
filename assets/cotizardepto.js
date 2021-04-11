@@ -171,6 +171,7 @@ function cotizarDepto() {
         mapa.setAttribute("width", "1100")
         mapa.setAttribute("height", "450")
         mapa.setAttribute("frameborder", "0")
+        mapa.setAttribute("class", "col-12")
         mapa.setAttribute("style", "border: 0; padding-top: 50px;")
         mapa.setAttribute("src", "https://www.google.com/maps/embed/v1/place?key=AIzaSyCX9VNRtLubMN2d0Ku3DBqBB_42U9g5oDk&q=" + direccionPropiedad + "," + ciudadPropiedad)
         document.getElementById("mapa").appendChild(mapa)
